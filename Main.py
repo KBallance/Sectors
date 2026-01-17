@@ -1,11 +1,12 @@
 import sys
 import Utility
+from Relations import Relations
 
 
 class Main:
     def __init__(self, args):
         args = Utility.capitalize_List(args)
-        if args[1] == "-H" or "-HELP" or "--HELP":
+        if "-H" or "-HELP" or "--HELP" in args:
             print(" Arguments: -G - enables gui, -D - enables debug mode")
         if "-G" in args:
             print("gui Enabled")
@@ -14,4 +15,7 @@ class Main:
         return None
     
 main = Main(sys.argv)
+
+relation = Relations("Sources.txt")
+relation.loopSources()
 
